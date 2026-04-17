@@ -173,3 +173,5 @@ It reads `PORT` from `.env` using `dotenv`.
 ### Why this is useful
 
 This scaffold gives you a clean starting point for building a full-stack web app while keeping the architecture easy to understand.
+
+Adding CI
