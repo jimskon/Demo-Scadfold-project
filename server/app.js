@@ -4,15 +4,18 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import papersRouter from './routes/papers.js';
-import pool from './db.js';dotenv.config();const app = express();const __filename = fileURLToPath(import.meta.url);
+import pool from './db.js';
+dotenv.config(); 
+const app = express(); 
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const clientDistPath = path.join(__dirname, '..', 'client', 'dist');app.use(express.json());app.get('/api/hello', (req, res) => {
+const clientDistPath = path.join(__dirname, '..', 'client', 'dist'); app.use(express.json()); app.get('/api/hello', (req, res) => {
   res.json({
     message: 'Hello from the Express backend!'
   });
-});app.get('/api/status', async (req, res) => {
+}); app.get('/api/status', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT NOW() AS server_time');    res.json({
+    const [rows] = await pool.query('SELECT NOW() AS server_time'); res.json({
       status: 'ok',
       time: new Date().toISOString(),
       environment: process.env.NODE_ENV || 'development',
@@ -25,6 +28,8 @@ const clientDistPath = path.join(__dirname, '..', 'client', 'dist');app.use(expr
       error: 'Database connection failed.'
     });
   }
-});app.use('/api/papers', papersRouter);app.use(express.static(clientDistPath));app.get('*', (req, res) => {
+}); app.use('/api/papers', papersRouter); app.use(express.static(clientDistPath)); app.get('*', (req, res) => {
   res.sendFile(path.join(clientDistPath, 'index.html'));
-});export default app;
+});
+
+export default app;

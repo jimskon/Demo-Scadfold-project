@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';test('main page loads', async ({ page }) => {
+import { test, expect } from '@playwright/test';
+test('main page loads', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('body')).toContainText(/paper|loading|papers/i);
 });
