@@ -252,13 +252,15 @@ export default function App() {
                 Manage your papers collection.
               </p>
             </div>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleShowAddForm}
-            >
-              Add Paper
-            </button>
+            {!showAddForm && (
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleShowAddForm}
+              >
+                Add Paper
+              </button>
+            )}
           </div>
 
           {successMessage && (
