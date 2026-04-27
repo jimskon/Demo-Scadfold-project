@@ -249,7 +249,7 @@ export default function App() {
             <div>
               <h1 className="mb-1">Papers</h1>
               <p className="text-muted mb-0">
-                Manage your papers collection at Kenyon.
+                Manage your papers collection at Kenyon College.
               </p>
             </div>
             <button
