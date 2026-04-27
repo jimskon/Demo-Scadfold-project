@@ -249,7 +249,7 @@ export default function App() {
             <div>
               <h1 className="mb-1">Papers</h1>
               <p className="text-muted mb-0">
-                Manage your papers collection at Kenyon College. James Skon!
+                Manage your papers collection - add, view details, and edit your papers all in one place.
               </p>
             </div>
             <button
